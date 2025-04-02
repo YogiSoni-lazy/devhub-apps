@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: manifests/namespace.yaml
+    path: manifests
     repoURL: https://github.com/RedHatQuickCourses/devspaces-apps.git
     targetRevision: main
   syncPolicy:
