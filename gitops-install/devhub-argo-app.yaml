@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: manifests
-    repoURL: https://github.com/RedHatQuickCourses/devspaces-apps.git
+    repoURL: https://github.com/YogiSoni-lazy/devhub-apps.git
     targetRevision: main
   syncPolicy:
     automated:
