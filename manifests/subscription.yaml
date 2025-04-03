@@ -1,8 +1,10 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: rhdh-operator
-  namespace: rhdh
+  name: rhdh
+  namespace: rhdh-operator
 spec:
   channel: fast
   name: rhdh-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
