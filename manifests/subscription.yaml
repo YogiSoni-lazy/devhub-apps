@@ -4,7 +4,5 @@ metadata:
   name: rhdh-operator
   namespace: rhdh
 spec:
-  channel: stable
+  channel: fast
   name: rhdh-operator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
