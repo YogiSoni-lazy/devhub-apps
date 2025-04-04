@@ -12,6 +12,41 @@ metadata:
     pod-security.kubernetes.io/audit-version: v1.24
     pod-security.kubernetes.io/warn: restricted
     pod-security.kubernetes.io/warn-version: v1.24
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:pod-security.kubernetes.io/audit: {}
+            f:pod-security.kubernetes.io/audit-version: {}
+            f:pod-security.kubernetes.io/warn: {}
+            f:pod-security.kubernetes.io/warn-version: {}
+      manager: pod-security-admission-label-synchronization-controller
+      operation: Apply
+      time: '2025-04-04T10:54:14Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: Mozilla
+      operation: Update
+      time: '2025-04-04T10:54:14Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/sa.scc.mcs: {}
+            f:openshift.io/sa.scc.supplemental-groups: {}
+            f:openshift.io/sa.scc.uid-range: {}
+      manager: cluster-policy-controller
+      operation: Update
+      time: '2025-04-04T10:54:14Z'
   name: rhdh-operator
   resourceVersion: '652706'
   uid: 7ed00332-6ae6-4ef5-8164-333f17e5a145
