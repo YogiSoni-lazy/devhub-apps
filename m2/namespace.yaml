@@ -1,9 +1,20 @@
-kind: Project
 apiVersion: project.openshift.io/v1
+kind: Project
 metadata:
-  name: rhdh-operator
+  annotations:
+    openshift.io/sa.scc.mcs: s0:c28,c2
+    openshift.io/sa.scc.supplemental-groups: 1000760000/10000
+    openshift.io/sa.scc.uid-range: 1000760000/10000
+  creationTimestamp: '2025-04-04T10:54:14Z'
   labels:
-    app.kubernetes.io/instance: devhub-config
+    kubernetes.io/metadata.name: rhdh-operator
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: v1.24
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: v1.24
+  name: rhdh-operator
+  resourceVersion: '652706'
+  uid: 7ed00332-6ae6-4ef5-8164-333f17e5a145
 spec:
   finalizers:
     - kubernetes
