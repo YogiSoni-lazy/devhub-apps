@@ -7,7 +7,6 @@ metadata:
     openshift.io/sa.scc.uid-range: 1000760000/10000
   creationTimestamp: '2025-04-04T10:54:14Z'
   labels:
-    kubernetes.io/metadata.name: rhdh-operator
     pod-security.kubernetes.io/audit: restricted
     pod-security.kubernetes.io/audit-version: v1.24
     pod-security.kubernetes.io/warn: restricted
