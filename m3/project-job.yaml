@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-project-once
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: create-project
+          image: registry.redhat.io/openshift4/ose-cli
+          command:
+            - /bin/bash
+            - -c
+            - |
+              oc apply -f - <<EOF
+              apiVersion: project.openshift.io/v1
+              kind: Project
+              metadata:
+                name: rhdh-operator
+              spec:
+                finalizers:
+                  - kubernetes
+              EOF
+      restartPolicy: Never
