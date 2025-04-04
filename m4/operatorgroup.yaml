@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  generateName: rhdh-operator-
+  annotations:
+    olm.providedAPIs: 'Backstage.v1alpha1.rhdh.redhat.com,Backstage.v1alpha2.rhdh.redhat.com,Backstage.v1alpha3.rhdh.redhat.com'
+  name: rhdh-operator-n5qqm
+  creationTimestamp: '2025-04-03T17:08:50Z'
+  namespace: rhdh-operator
+spec:
+  upgradeStrategy: Default
