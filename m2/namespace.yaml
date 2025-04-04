@@ -2,6 +2,8 @@ kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
   name: rhdh-operator
+  labels:
+    app.kubernetes.io/instance: devhub-config
 spec:
   finalizers:
     - kubernetes
