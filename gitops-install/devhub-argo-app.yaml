@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: devhub-config
+  name: devhub-config-new
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,12 +9,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: m2
+    path: m4
     repoURL: https://github.com/YogiSoni-lazy/devhub-apps.git
     targetRevision: main
   syncPolicy:
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: false
+      prune: false
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
