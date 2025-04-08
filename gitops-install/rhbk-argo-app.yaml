@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rhbk-install
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: m5
+    repoURL: https://github.com/YogiSoni-lazy/devhub-apps.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: false
+      prune: false
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - RespectIgnoreDifferences=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 10s
+        factor: 2
+        maxDuration: 2m
+  ignoreDifferences:
+    - group: k8s.keycloak.org
+      kind: Keycloak
+      jsonPointers:
+        - /status
+        - /metadata
+        - /spec
