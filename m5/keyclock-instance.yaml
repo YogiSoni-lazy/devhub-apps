@@ -3,6 +3,8 @@ kind: Keycloak
 metadata:
   name: example-keycloak
   namespace: rhdh-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   instances: 1
   hostname:
