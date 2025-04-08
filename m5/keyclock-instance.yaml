@@ -1,0 +1,57 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: example-keycloak
+  namespace: rhdh-operator
+spec:
+  instances: 1
+  hostname:
+    hostname: keycloak.rhdh-operator.svc.cluster.local
+  externalAccess:
+    enabled: true
+  http:
+    httpEnabled: true
+    httpPort: 8080
+  keycloakDeploymentSpec:
+    template:
+      podSpec:
+        containers:
+          - name: keycloak
+            env:
+              - name: KEYCLOAK_ADMIN
+                value: admin
+              - name: KEYCLOAK_ADMIN_PASSWORD
+                value: Str0ngP@ssw0rd!
+              - name: KC_HTTP_ENABLED
+                value: "true"
+              - name: KC_HTTP_PORT
+                value: "8080"
+              - name: KC_PROXY
+                value: "edge"
+              - name: KC_HOSTNAME_STRICT
+                value: "false"
+              - name: KC_HOSTNAME_STRICT_HTTPS
+                value: "false"
+              - name: KC_HEALTH_ENABLED
+                value: "true"
+            ports:
+              - containerPort: 8080
+                name: http
+            livenessProbe:
+              httpGet:
+                path: /health/live
+                port: 8080
+              periodSeconds: 10
+              failureThreshold: 3
+            readinessProbe:
+              httpGet:
+                path: /health/ready
+                port: 8080
+              periodSeconds: 10
+              failureThreshold: 3
+            startupProbe:
+              httpGet:
+                path: /health/started
+                port: 8080
+              periodSeconds: 5
+              failureThreshold: 60
