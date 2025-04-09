@@ -1,59 +1,17 @@
 apiVersion: k8s.keycloak.org/v2alpha1
 kind: Keycloak
 metadata:
-  name: example-keycloak
+  name: example-keycloak-new
   namespace: rhdh-operator
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    app: sso
 spec:
-  instances: 1
   hostname:
-    hostname: example-keycloak-service-rhdh-operator.apps.cluster-hdm98.dynamic.redhatworkshops.io
-  externalAccess:
-    enabled: true
+    hostname: keycloak-rhdh-operator.apps.cluster-hdm98.dynamic.redhatworkshops.io
   http:
     httpEnabled: true
-    httpPort: 8080
-  keycloakDeploymentSpec:
-    template:
-      podSpec:
-        containers:
-          - name: keycloak
-            env:
-              - name: KEYCLOAK_ADMIN
-                value: admin
-              - name: KEYCLOAK_ADMIN_PASSWORD
-                value: Str0ngP@ssw0rd!
-              - name: KC_HTTP_ENABLED
-                value: "true"
-              - name: KC_HTTP_PORT
-                value: "8080"
-              - name: KC_PROXY
-                value: "edge"
-              - name: KC_HOSTNAME_STRICT
-                value: "false"
-              - name: KC_HOSTNAME_STRICT_HTTPS
-                value: "false"
-              - name: KC_HEALTH_ENABLED
-                value: "true"
-            ports:
-              - containerPort: 8080
-                name: http
-            livenessProbe:
-              httpGet:
-                path: /health/live
-                port: 8080
-              periodSeconds: 10
-              failureThreshold: 3
-            readinessProbe:
-              httpGet:
-                path: /health/ready
-                port: 8080
-              periodSeconds: 10
-              failureThreshold: 3
-            startupProbe:
-              httpGet:
-                path: /health/started
-                port: 8080
-              periodSeconds: 5
-              failureThreshold: 60
+    httpPort: 8090
+    tlsSecret: my-tls-secret
+  httpManagement:
+    port: 8080
+  instances: 1
