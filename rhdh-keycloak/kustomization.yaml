@@ -12,8 +12,12 @@ resources:
 configMapGenerator:
   - name: app-config-rhdh
     namespace: rhdh-operator
+    behavior: replace
     files:
       - rhdh/app-config-rhdh.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
 
 vars:
   - name: BASE_URL
