@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: devhub-deploy
+  name: keycloak-deploy
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: rhdh
+    path: keycloak
     repoURL: https://github.com/YogiSoni-lazy/devhub-apps.git
     targetRevision: main
   syncPolicy:
