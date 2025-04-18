@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - keycloak/1-my-tls-secret.yaml
   - rhdh/1-namespace.yaml
   - rhdh/2-OperatorGroup.yaml
   - rhdh/3-Subscription.yaml
@@ -26,3 +27,20 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.CORS_ORIGIN
+
+  - name: TLS_CRT
+    objref:
+      kind: ConfigMap
+      name: keycloak-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.tls.crt
+
+
+  - name: TLS_KEY
+    objref:
+      kind: ConfigMap
+      name: keycloak-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.tls.key
