@@ -7,11 +7,11 @@ data:
   "app-config-rhdh.yaml": |
     app:
       title: Red Hat Developer Hub
-      baseUrl: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+      baseUrl: ${BASE_URL}
     backend:
       auth:
         keys:
           - secret: "${BACKEND_SECRET}"
-      baseUrl: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+      baseUrl: ${BASE_URL}
       cors:
-        origin: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+        origin: ${CORS_ORIGIN}
