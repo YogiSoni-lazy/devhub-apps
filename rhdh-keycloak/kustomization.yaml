@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - rhdh/vars-config.yaml
   - rhdh/1-namespace.yaml
   - rhdh/2-OperatorGroup.yaml
   - rhdh/3-Subscription.yaml
