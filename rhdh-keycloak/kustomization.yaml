@@ -6,6 +6,7 @@ resources:
   - rhdh/2-OperatorGroup.yaml
   - rhdh/3-Subscription.yaml
   - rhdh/4-Secret.yaml
+  - rhdh/rhdh-vars.yaml    # Ensure this resource is applied before referencing it in vars
   - rhdh/6-backstage.yaml
   - rhdh/rhdh-vars.yaml
 
@@ -35,3 +36,4 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.CORS_ORIGIN
+
