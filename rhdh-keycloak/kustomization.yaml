@@ -20,20 +20,24 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 
-vars:
-  - name: BASE_URL
-    objref:
+replacements:
+  - source:
       kind: ConfigMap
       name: rhdh-vars
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.BASE_URL
+      namespace: rhdh-operator
+      fieldPath: data.BASE_URL
+    targets:
+      - path: spec.envFrom[0].configMapRef.name
+        kind: Deployment
+        name: rhdh-backstage
 
-  - name: CORS_ORIGIN
-    objref:
+  - source:
       kind: ConfigMap
       name: rhdh-vars
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.CORS_ORIGIN
+      namespace: rhdh-operator
+      fieldPath: data.CORS_ORIGIN
+    targets:
+      - path: spec.envFrom[0].configMapRef.name
+        kind: Deployment
+        name: rhdh-backstage
 
