@@ -12,7 +12,7 @@ resources:
 configMapGenerator:
   - name: app-config-rhdh
     namespace: rhdh-operator
-    behavior: replace
+    behavior: create
     files:
       - rhdh/app-config-rhdh.yaml
 
