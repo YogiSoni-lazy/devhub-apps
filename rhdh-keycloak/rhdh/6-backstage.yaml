@@ -23,8 +23,8 @@ spec:
     replicas: 1
     route:
       enabled: true
-      host: rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
-      subdomain: apps.cluster-nkmjp.dynamic.redhatworkshops.io
+      host: ${HOST}
+      subdomain: ${SUBDOMAIN}
   database:
     enableLocalDb: true
 ...

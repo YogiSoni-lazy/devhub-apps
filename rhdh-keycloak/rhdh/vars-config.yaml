@@ -7,3 +7,6 @@ metadata:
 data:
   BASE_URL: "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io"
   CORS_ORIGIN: "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io"
+  HOST: rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+  SUBDOMAIN: apps.cluster-nkmjp.dynamic.redhatworkshops.io
+
