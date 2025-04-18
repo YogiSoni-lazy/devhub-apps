@@ -6,9 +6,8 @@ resources:
   - rhdh/2-OperatorGroup.yaml
   - rhdh/3-Subscription.yaml
   - rhdh/4-Secret.yaml
-  - rhdh/rhdh-vars.yaml    # Ensure this resource is applied before referencing it in vars
-  - rhdh/6-backstage.yaml
   - rhdh/rhdh-vars.yaml
+  - rhdh/6-backstage.yaml
 
 configMapGenerator:
   - name: app-config-rhdh
@@ -27,17 +26,8 @@ replacements:
       namespace: rhdh-operator
       fieldPath: data.BASE_URL
     targets:
-      - path: spec.envFrom[0].configMapRef.name
-        kind: Deployment
-        name: rhdh-backstage
-
-  - source:
-      kind: ConfigMap
-      name: rhdh-vars
-      namespace: rhdh-operator
-      fieldPath: data.CORS_ORIGIN
-    targets:
-      - path: spec.envFrom[0].configMapRef.name
-        kind: Deployment
-        name: rhdh-backstage
-
+      - select:
+          kind: Backstage
+          name: developer-hub
+        fieldPaths:
+          - spec.application.route.host
