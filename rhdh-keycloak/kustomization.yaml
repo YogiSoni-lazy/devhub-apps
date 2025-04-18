@@ -8,3 +8,21 @@ resources:
   - rhdh/4-Secret.yaml
   - rhdh/5-App-Config.yaml
   - rhdh/6-backstage.yaml
+  - rhdh/rhdh-vars.yaml  # <- Add this ConfigMap file
+
+vars:
+  - name: BASE_URL
+    objref:
+      kind: ConfigMap
+      name: rhdh-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.BASE_URL
+
+  - name: CORS_ORIGIN
+    objref:
+      kind: ConfigMap
+      name: rhdh-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.CORS_ORIGIN
