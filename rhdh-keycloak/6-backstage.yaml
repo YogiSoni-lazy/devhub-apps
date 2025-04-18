@@ -1,3 +1,4 @@
+---
 apiVersion: rhdh.redhat.com/v1alpha3
 kind: Backstage
 metadata:
@@ -26,3 +27,4 @@ spec:
       subdomain: apps.cluster-nkmjp.dynamic.redhatworkshops.io
   database:
     enableLocalDb: true
+...
