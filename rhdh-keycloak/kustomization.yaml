@@ -7,13 +7,13 @@ resources:
   - rhdh/2-OperatorGroup.yaml
   - rhdh/3-Subscription.yaml
   - rhdh/4-Secret.yaml
-  - rhdh/6-backstage.yaml
+  - rhdh/5-backstage.yaml
 
 configMapGenerator:
   - name: app-config-rhdh
     namespace: rhdh-operator
     files:
-      - rhdh/app-config-rhdh.yaml
+      - rhdh/6-app-config-rhdh.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
