@@ -1,0 +1,10 @@
+app:
+  title: Red Hat Developer Hub
+  baseUrl: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+backend:
+  auth:
+    keys:
+      - secret: "${BACKEND_SECRET}"
+  baseUrl: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+  cors:
+    origin: https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.i
