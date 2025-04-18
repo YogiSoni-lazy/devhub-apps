@@ -5,6 +5,9 @@ metadata:
   namespace: rhdh-operator
   labels:
     operators.coreos.com/rhdh.rhdh-operator: ''
+  annotations:
+    olm.operatorGroup: rhdh-operator
+    rhdh.openshift.io/display-name: "Red Hat Developer Hub"
 spec:
   channel: fast
   installPlanApproval: Automatic
