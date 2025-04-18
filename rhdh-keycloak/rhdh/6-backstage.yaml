@@ -16,16 +16,6 @@ spec:
       envs:
         - name: NODE_TLS_REJECT_UNAUTHORIZED
           value: "0"
-        - name: BASE_URL
-          valueFrom:
-            configMapKeyRef:
-              name: rhdh-vars
-              key: BASE_URL
-        - name: CORS_ORIGIN
-          valueFrom:
-            configMapKeyRef:
-              name: rhdh-vars
-              key: CORS_ORIGIN
       secrets:
         - name: rhdh-secrets
     extraFiles:
