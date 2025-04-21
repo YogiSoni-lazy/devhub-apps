@@ -5,4 +5,5 @@ resources:
   - keycloak/1-namespace.yaml
   - keycloak/2-subscription.yaml
   - keycloak/vars-config.yaml
+  - keycloak/3-secret.yaml
 
