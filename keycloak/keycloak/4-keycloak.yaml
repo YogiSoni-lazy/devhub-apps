@@ -8,7 +8,7 @@ metadata:
     app: sso
 spec:
   hostname:
-    hostname: $(KEYCLOCK_HOST)
+    hostname: keycloak-rhdh-operator.apps.cluster-nkmjp.dynamic.redhatworkshops.io
   http:
     httpEnabled: true
     httpPort: 8090
