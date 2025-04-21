@@ -6,13 +6,11 @@ metadata:
 spec:
   keycloakCRName: example-keycloak-new
   realm:
-    id: rhdh
     realm: rhdh
     enabled: true
     displayName: "RHDH Realm"
     clients:
       - clientId: developer-hub
-        secret: devhub-secret
         enabled: true
         protocol: openid-connect
         publicClient: false
