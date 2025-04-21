@@ -1,0 +1,19 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: KeycloakUser
+metadata:
+  name: example-realm-admin
+  namespace: rhdh-operator
+spec:
+  keycloakCRName: example-keycloak-new
+  realm: example-realm
+  user:
+    username: admin
+    enabled: true
+    email: admin@example.com
+    firstName: Realm
+    lastName: Admin
+    credentials:
+      - type: password
+        value: admin123
+    realmRoles:
+      - realm-admin

@@ -1,14 +1,11 @@
-
 apiVersion: k8s.keycloak.org/v2alpha1
 kind: Keycloak
 metadata:
   name: example-keycloak-new
   namespace: rhdh-operator
-  labels:
-    app: sso
 spec:
   hostname:
-    hostname: REPLACE_ME_KEYCLOAK_HOST
+    hostname: keycloak-rhdh-operator.apps.cluster-nkmjp.dynamic.redhatworkshops.io
   http:
     httpEnabled: true
     httpPort: 8090
@@ -16,9 +13,3 @@ spec:
   httpManagement:
     port: 8080
   instances: 1
-  serverConfiguration:
-    - name: KEYCLOAK_ADMIN
-      value: admin
-    - name: KEYCLOAK_ADMIN_PASSWORD
-      value: admin123
-
