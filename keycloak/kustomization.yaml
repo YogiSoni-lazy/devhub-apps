@@ -7,3 +7,22 @@ resources:
   - keycloak/2-subscription.yaml
   - keycloak/3-secret.yaml
   - keycloak/4-keycloak.yaml
+
+configMapGenerator:
+  - name: keycloak-vars
+    literals:
+      - KEYCLOAK_HOST=keycloak-rhdh-operator.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+    behavior: create
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+vars:
+  - name: KEYCLOAK_HOST
+    objref:
+      kind: ConfigMap
+      name: keycloak-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.KEYCLOAK_HOST
+
