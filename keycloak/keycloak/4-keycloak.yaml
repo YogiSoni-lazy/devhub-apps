@@ -1,0 +1,17 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: example-keycloak-new
+  namespace: rhdh-operator
+  labels:
+    app: sso
+spec:
+  hostname:
+    hostname: ${KEYCLOCK_HOST}
+  http:
+    httpEnabled: true
+    httpPort: 8090
+    tlsSecret: my-tls-secret
+  httpManagement:
+    port: 8080
+  instances: 1

@@ -9,4 +9,5 @@ data:
   CORS_ORIGIN: "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io"
   HOST: rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io
   SUBDOMAIN: apps.cluster-nkmjp.dynamic.redhatworkshops.io
+  KEYCLOCK_HOST: keycloak-rhdh-operator.apps.cluster-nkmjp.dynamic.redhatworkshops.io
 
