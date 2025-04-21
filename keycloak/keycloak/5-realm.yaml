@@ -9,8 +9,19 @@ spec:
     id: rhdh
     realm: rhdh
     enabled: true
-    displayName: "Red Hat Developer Hub Realm"
-    loginWithEmailAllowed: true
-    registrationAllowed: false
-    resetPasswordAllowed: true
-    editUsernameAllowed: false
+    displayName: "RHDH Realm"
+    clients:
+      - clientId: developer-hub
+        secret: devhub-secret
+        enabled: true
+        protocol: openid-connect
+        publicClient: false
+        redirectUris:
+          - "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io/auth/oidc/handler/frame"
+        baseUrl: "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io"
+        adminUrl: "https://rhdh.apps.cluster-nkmjp.dynamic.redhatworkshops.io"
+        standardFlowEnabled: true
+        implicitFlowEnabled: false
+        directAccessGrantsEnabled: true
+        serviceAccountsEnabled: true
+        authorizationServicesEnabled: true
