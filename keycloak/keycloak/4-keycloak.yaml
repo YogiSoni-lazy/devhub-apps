@@ -8,7 +8,7 @@ metadata:
     app: sso
 spec:
   hostname:
-    hostname: $(KEYCLOAK_HOST)
+    hostname: REPLACE_ME_KEYCLOAK_HOST
   http:
     httpEnabled: true
     httpPort: 8090
