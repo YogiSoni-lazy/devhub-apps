@@ -16,4 +16,9 @@ spec:
   httpManagement:
     port: 8080
   instances: 1
+  serverConfiguration:
+    - name: KEYCLOAK_ADMIN
+      value: admin
+    - name: KEYCLOAK_ADMIN_PASSWORD
+      value: admin123
 
