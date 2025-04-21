@@ -3,7 +3,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: rhbk-operator
-  namespace: default
+  namespace: rhdh-operator
   labels:
     operators.coreos.com/rhbk-operator.rhdh-operator: ''
   annotations:
