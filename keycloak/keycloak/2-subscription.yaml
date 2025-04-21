@@ -5,7 +5,7 @@ metadata:
   name: rhbk-operator
   namespace: rhdh-operator
   labels:
-    operators.coreos.com/rhbk-operator.rhbk-operator-ns: ''
+    operators.coreos.com/rhbk-operator.rhdh-operator: ''
   annotations:
     operators.operatorframework.io.display-name: Red Hat build of Keycloak Operator
 spec:
