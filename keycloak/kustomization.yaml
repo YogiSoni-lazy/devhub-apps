@@ -4,14 +4,14 @@ kind: Kustomization
 resources:
   - keycloak/1-namespace.yaml
   - keycloak/2-OperatorGroup.yaml
-  - keycloak/2-subscription.yaml
-  - keycloak/3-secret.yaml
-  - keycloak/4-keycloak.yaml
+  #- keycloak/2-subscription.yaml
+  #- keycloak/3-secret.yaml
+  #- keycloak/4-keycloak.yaml
 
 configMapGenerator:
   - name: keycloak-vars
     literals:
-      - KEYCLOAK_HOST=keycloak-rhdh-operator.apps.cluster-nkmjp.dynamic.redhatworkshops.io
+      - KEYCLOAK_HOST=keycloak-rhdh-operator.apps.cluster-klj6r.dynamic.redhatworkshops.io
     behavior: create
 
 replacements:
