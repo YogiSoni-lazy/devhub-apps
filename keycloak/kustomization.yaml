@@ -5,8 +5,8 @@ resources:
   - keycloak/1-namespace.yaml
   - keycloak/2-OperatorGroup.yaml
   - keycloak/3-subscription.yaml
-  #- keycloak/3-secret.yaml
-  #- keycloak/4-keycloak.yaml
+  - keycloak/4-secret.yaml
+  - keycloak/5-keycloak_instance.yaml
 
 configMapGenerator:
   - name: keycloak-vars
