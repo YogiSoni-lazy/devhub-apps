@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: m5
+    path: keycloak
     repoURL: https://github.com/YogiSoni-lazy/devhub-apps.git
     targetRevision: main
   syncPolicy:
