@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - keycloak/1-namespace.yaml
   - keycloak/2-OperatorGroup.yaml
-  #- keycloak/2-subscription.yaml
+  - keycloak/3-subscription.yaml
   #- keycloak/3-secret.yaml
   #- keycloak/4-keycloak.yaml
 
